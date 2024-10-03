@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey</title>
+    <style>
+        body {
+            font-family: "Pacifico", cursive;
+            text-align: center;
+            background-color: #FFEBEE;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #EAD1E5 ;
+        }
+
+        .month {
+            margin-bottom: 50px;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .day {
+            padding: 20px;
+            background-color: #A7D3E0 ;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .header {
+            font-weight: bold;
+            background-color: #FFB3C1 ;
+            color: white;
+        }
+
+        .empty {
+            background-color: transparent;
+        }
+
+        .day:hover {
+            background-color: #d8acbe;
+            cursor: pointer;
+        }
+
+        /* Ngày có liên kết */
+        .linked-day {
+            background-color: #FF9AA2 ; /* Màu riêng cho những ngày có liên kết */
+        }
+
+        .linked-day:hover {
+            background-color: #e00808; /* Màu khi hover cho ngày có liên kết */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Our Memories</h1>
+
+    <!-- Tháng 7 -->
+    <div class="month">
+        <h2>July</h2>
+        <div class="calendar">
+            <!-- Headers for days of the week -->
+            <div class="day header">CN</div>
+            <div class="day header">T2</div>
+            <div class="day header">T3</div>
+            <div class="day header">T4</div>
+            <div class="day header">T5</div>
+            <div class="day header">T6</div>
+            <div class="day header">T7</div>
+
+            <!-- Days for July 2024 (Start on Monday, 1st) -->
+            <div class="empty"></div>
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day linked-day" onclick="window.location.href='july-31.html';" style="cursor: pointer;">31</div>
+        </div>
+    </div>
+
+    <!-- Tháng 8 -->
+    <div class="month">
+        <h2>August</h2>
+        <div class="calendar">
+            <!-- Headers for days of the week -->
+            <div class="day header">CN</div>
+            <div class="day header">T2</div>
+            <div class="day header">T3</div>
+            <div class="day header">T4</div>
+            <div class="day header">T5</div>
+            <div class="day header">T6</div>
+            <div class="day header">T7</div>
+
+            <!-- Days for August 2024 (Start on Thursday, 1st) -->
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day linked-day" onclick="window.location.href='august-9.html';" style="cursor: pointer;">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day linked-day" onclick="window.location.href='august-17.html';" style="cursor: pointer;">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day linked-day" onclick="window.location.href='august-24.html';" style="cursor: pointer;">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day linked-day" onclick="window.location.href='august-27.html';" style="cursor: pointer;">27</div>
+            <div class="day">28</div>
+            <div class="day linked-day" onclick="window.location.href='august-29.html';" style="cursor: pointer;">29</div>
+            <div class="day">30</div>
+            <div class="day">31</div>
+        </div>
+    </div>
+
+    <!-- Tháng 9 -->
+    <div class="month">
+        <h2>September</h2>
+        <div class="calendar">
+            <!-- Headers for days of the week -->
+            <div class="day header">CN</div>
+            <div class="day header">T2</div>
+            <div class="day header">T3</div>
+            <div class="day header">T4</div>
+            <div class="day header">T5</div>
+            <div class="day header">T6</div>
+            <div class="day header">T7</div>
+
+            <!-- Days for September 2024 (Start on Sunday, 1st) -->
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day linked-day" onclick="window.location.href='september-5.html';" style="cursor: pointer;">5</div>
+            <div class="day linked-day" onclick="window.location.href='september-6.html';" style="cursor: pointer;">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day linked-day" onclick="window.location.href='september-12.html';" style="cursor: pointer;">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day linked-day" onclick="window.location.href='september-17.html';" style="cursor: pointer;">17</div>            
+            <div class="day">18</div>
+            <div class="day linked-day" onclick="window.location.href='september-19.html';" style="cursor: pointer;">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day linked-day" onclick="window.location.href='september-23.html';" style="cursor: pointer;">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day linked-day" onclick="window.location.href='september-26.html';" style="cursor: pointer;">26</div>
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+        </div>
+        <div style="margin-top: 20px;">
+            <button onclick="window.location.href='bonus.html'" style="padding: 10px 20px; background-color: #4682b4; color: white; border: none; border-radius: 5px; font-size: 1.2em; cursor: pointer;">Bonus</button>
+            
+            <button onclick="window.location.href='memories.html'" style="padding: 10px 20px; background-color: #4682b4; color: white; border: none; border-radius: 5px; font-size: 1.2em; cursor: pointer; margin-left: 20px;">Journey</button>
+        </div>
+        
+    </div>
+</body>
+</html>

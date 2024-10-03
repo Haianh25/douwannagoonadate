@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - September 19</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4682b4;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Căn giữa các khung tranh */
+            gap: 20px; /* Khoảng cách giữa các khung tranh */
+            margin-top: 20px;
+        }
+
+        .frame-wrapper {
+            text-align: center; /* Căn giữa cả khung và mô tả */
+            opacity: 0; /* Ẩn các khung ban đầu */
+            transform: translateY(50px); /* Dịch xuống dưới ban đầu */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .frame {
+            border: 5px solid #4682b4;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 500px; /* Chiều rộng cố định cho khung tranh */
+            height: 500px; /* Chiều cao cố định cho khung tranh */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .frame img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Đảm bảo hình ảnh luôn vừa với khung mà không bị biến dạng */
+        }
+
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4682b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-link:hover {
+            background-color: #4169e1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery - Memories from Ninth Date</h1>
+    <div class="gallery">
+        <div class="frame-wrapper">
+            <div class="frame">
+                <img src="1909.jpg" alt="Description of image 1">
+            </div>
+            <div class="description">Đi ăn quán mì tìm trên tiktok.</div>
+        </div>
+        <div class="frame-wrapper">
+            <div class="frame">
+                <img src="19091.jpg" alt="Description of image 2">
+            </div>
+            <div class="description">Mít ngồi đợi em mon huhu.</div>
+        </div>
+        <div class="frame-wrapper">
+            <div class="frame">
+                <img src="19092.jpg" alt="Description of image 3">
+            </div>
+            <div class="description">Bó hoa tươi cho người đẹp.</div>
+        </div>
+    </div>
+    <a href="ourjourney.html" class="back-link">Back to Calendar</a>
+
+    <script>
+        // Lấy tất cả các phần tử frame-wrapper
+        const frames = document.querySelectorAll('.frame-wrapper');
+
+        // Dùng setTimeout để hiện từng frame một từ trái sang phải
+        frames.forEach((frame, index) => {
+            setTimeout(() => {
+                frame.style.opacity = 1;
+                frame.style.transform = 'translateY(0)';
+            }, index * 500); // Mỗi khung sẽ hiện sau 500ms so với khung trước
+        });
+    </script>
+</body>
+</html>

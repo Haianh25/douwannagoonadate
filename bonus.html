@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Bonus</title>
+    <style>
+        body {
+            font-family: "Pacifico", cursive;
+            text-align: center;
+            background-color: #FFEBEE;
+            padding-top: 50px;  
+        }
+
+        h1 {
+            color: #EAD1E5 ;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .frame-wrapper {
+            text-align: center;
+            display: none; /* Ẩn tất cả các khung lúc ban đầu */
+        }
+
+        .frame {
+            border: 5px solid #4682b4;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 900px;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .frame img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4682b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-link:hover {
+            background-color: #4169e1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery - Bonus</h1>
+
+    <div class="gallery">
+        <!-- Các khung tranh -->
+        <div class="frame-wrapper" id="frame-1">
+            <div class="frame">
+                <img src="0608.jpg" alt="Description of image 1">
+            </div>
+
+        </div>
+        <div class="frame-wrapper" id="frame-2">
+            <div class="frame">
+                <img src="bonus1.jpg" alt="Description of image 2">
+            </div>
+           
+        </div>
+        <div class="frame-wrapper" id="frame-3">
+            <div class="frame">
+                <img src="bonus2.jpg" alt="Description of image 3">
+            </div>
+            
+        </div>
+        <div class="frame-wrapper" id="frame-4">
+            <div class="frame">
+                <img src="bonus3.jpg" alt="Description of image 4">
+            </div>
+            
+        </div>
+        <div class="frame-wrapper" id="frame-5">
+            <div class="frame">
+                <img src="bonus4.jpg" alt="Description of image 5">
+            </div>
+          
+        </div>
+        <div class="frame-wrapper" id="frame-6">
+            <div class="frame">
+                <img src="bonus5.jpg" alt="Description of image 6">
+            </div>
+
+        </div>
+        <div class="frame-wrapper" id="frame-7">
+            <div class="frame">
+                <img src="bonus6.jpg" alt="Description of image 7">
+            </div>
+            
+        </div>
+        <div class="frame-wrapper" id="frame-8">
+            <div class="frame">
+                <img src="bonus7.jpg" alt="Description of image 8">
+            </div>
+        
+        </div>
+        <div class="frame-wrapper" id="frame-9">
+            <div class="frame">
+                <img src="bonus8.jpg" alt="Description of image 9">
+            </div>
+            
+        </div>
+        <div class="frame-wrapper" id="frame-10">
+            <div class="frame">
+                <img src="bonus9.jpg" alt="Description of image 10">
+            </div>
+           
+        </div>
+    </div>
+
+    <a href="ourjourney.html" class="back-link">Back to Calendar</a>
+
+    <script>
+        let currentFrame = 1;
+        const totalFrames = 10;
+
+        // Hiển thị khung đầu tiên khi tải trang
+        document.getElementById(`frame-${currentFrame}`).style.display = "block";
+
+        // Lắng nghe sự kiện gõ phím
+        document.body.addEventListener('keydown', (event) => {
+            // Kiểm tra xem phím gõ có phải là Space (keyCode 32)
+            if (event.code === 'Space') {
+                // Ẩn khung hiện tại
+                document.getElementById(`frame-${currentFrame}`).style.display = "none";
+                // Tăng chỉ số khung, nếu vượt quá thì quay lại khung 1
+                currentFrame = currentFrame < totalFrames ? currentFrame + 1 : 1;
+                // Hiển thị khung tiếp theo
+                document.getElementById(`frame-${currentFrame}`).style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

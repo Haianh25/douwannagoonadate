@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Night Timeline</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+           font-family: "Pacifico", cursive;
+            background-color: #631856;
+            background-image: url('mit.jpg');
+            background-size: cover; /* Giúp ảnh bao phủ toàn bộ trang */
+            background-position: center; /* Đảm bảo ảnh được canh giữa */
+             background-repeat: no-repeat; /* Đảm bảo không lặp lại ảnh */
+            background-attachment: fixed; /* Giữ cho ảnh cố định khi cuộn */
+           
+            color: #130f0f;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #250a0a;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Create the line in the middle of the timeline */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #070606;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        /* Container around content */
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0; /* Hidden initially */
+            transform: translateY(50px); /* Slightly off-screen */
+            transition: all 0.6s ease-out;
+            transition-delay: 0s;
+        }
+
+        /* Left or right placement of the container */
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        /* Add a circle to each item */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: rgb(8, 8, 8);
+            border: 4px solid #fcfcfc;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::before {
+            left: -10px;
+        }
+
+        /* Content inside the timeline item */
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .timeline-content h2 {
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .timeline-content p {
+            margin: 10px 0 0;
+            line-height: 1.6;
+        }
+
+        /* Animation for visible timeline items */
+        .timeline-item.active {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Reset position */
+        }
+
+        /* Add responsiveness */
+        @media screen and (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-item::before {
+                left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Date Night Timeline</h1>
+
+    <div class="timeline">
+        <!-- Timeline item 1 -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>6:30 PM - Picking Up</h2>
+                <p>Pick up my babi .</p>
+            </div>
+        </div>
+
+        <!-- Timeline item 2 -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h2>7:00 PM - Dinner </h2>
+                <p>Have dinner at Pizza 4P's Bao Khanh .</p>
+            </div>
+        </div>
+
+        <!-- Timeline item 3 -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>8:00 PM - Dessert</h2>
+                <p>.</p>
+            </div>
+        </div>
+
+        <!-- Timeline item 4 -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h2>9:00 PM - Main event</h2>
+                <p> Have some coffe at Darklight.Lab .</p>
+            </div>
+        </div>
+
+        <!-- Timeline item 5 -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>11:00 PM - Goodbye</h2>
+                <p>Take babi back home.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to check if the element is in the viewport
+        function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to activate timeline items one by one
+        function activateTimeline() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            let delay = 0;
+
+            timelineItems.forEach((item, index) => {
+                if (isInViewport(item)) {
+                    setTimeout(() => {
+                        item.classList.add('active'); // Add active class when in viewport with delay
+                    }, delay);
+                    delay += 500; // Delay each item by 500ms
+                }
+            });
+        }
+
+        // Run the activateTimeline function on scroll
+        window.addEventListener('scroll', activateTimeline);
+
+        // Run once when the page loads to check for already visible items
+        activateTimeline();
+    </script>
+
+</body>
+</html>

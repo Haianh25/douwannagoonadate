@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open the Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('pink.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: "Pacifico", cursive;
+        }
+
+        .envelope {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            background-color: #f4e1d2;
+            border: 2px solid #b89b84;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 1s ease-in-out;
+        }
+
+        .envelope::before, .envelope::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f4e1d2;
+            border: 2px solid #b89b84;
+            border-radius: 50%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .envelope::before {
+            top: -50%;
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        .envelope::after {
+            bottom: -50%;
+            left: 0;
+            transform: rotate(-45deg);
+        }
+
+        .envelope.open::before {
+            transform: rotate(0deg) translateY(-100%);
+        }
+
+        .envelope.open::after {
+            transform: rotate(0deg) translateY(100%);
+        }
+
+        .letter {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 5%;
+            left: 5%;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 1s ease-in-out;
+        }
+
+        .envelope.open .letter {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #7c706d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" id="envelope">
+        <div class="letter">
+            <h2>Dear mon!<br>Click again to read more =)))).</h2>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        let isOpened = false;  // Biến kiểm tra nếu thư đã mở
+
+        envelope.addEventListener('click', function() {
+            if (!isOpened) {
+                // Nếu thư chưa mở, thực hiện mở thư
+                envelope.classList.add('open');
+                isOpened = true; // Cập nhật trạng thái đã mở
+            } else {
+                // Nếu thư đã mở, sau khi nhấn lần nữas, chuyển hướng đến trang khác
+                window.location.href = 'index2.html';
+            }
+        });
+    </script>
+</body>
+</html>
